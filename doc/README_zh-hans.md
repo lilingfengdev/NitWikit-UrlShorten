@@ -65,22 +65,22 @@ Demo 地址：[url-shortner-demo.iou.icu](https://url-shortner-demo.iou.icu/)
 
 去 Worker => Worker 名字 => Variables => Environment Variables 来配置环境变量。
 
-| 变量名称       | 值（默认）                | 说明                                                         |
-| -------------- | ------------------------- | ------------------------------------------------------------ |
-| REPO_VERSION   | @gh-pages                 | 前端页面仓库版本，如果使用 Jsdelivr CDN 地址则可能需要改为 Release tag，否则可能不是最新版本 |
-| PASSWORD_ADMIN | admin                     | 管理员用户密码（访问路径），值为空表示无管理员用户           |
-| PASSWORD       |                           | 访客用户密码（访问路径），值为空表示主页                     |
-| INDEX_REDIRECT |                           | 访客用户密码值不为空时，主页跳转的 URL                       |
-| URL_EXCLUDE    | //url-shortner-demo.iou.icu | 排除本机域名，请修改为你的域名                               |
-| THEME_ADMIN    |                           | 管理员用户主页路径，如：`theme/admin`                        |
-| THEME          |                           | 访客用户主页                                                 |
-| LEN            | 6                          | 随机生成的短链路径长度                                       |
-| NO_REF         | false                     | 控制 HTTP referrer header                                    |
-| CORS           | false                     | 允许 API 请求提供跨源资源共享                                |
-| UNIQUE_LINK    | false                     | 为相同的 URL 生成相同的短链                                  |
-| CUSTOM_LINK    | true                      | 允许访客用户自定义短链                                       |
-| LEN_LIMIT      | 3                         | 允许访客用户自定义短链的最小长度                             |
-| REGEX_REDIRECT | false                     | 开启正则表达式重定向功能                                     |
+| 变量名称           | 值（默认）                       | 说明                                                          |
+|----------------|-----------------------------|-------------------------------------------------------------|
+| REPO_VERSION   | @gh-pages                   | 前端页面仓库版本，如果使用 Jsdelivr CDN 地址则可能需要改为 Release tag，否则可能不是最新版本 |
+| PASSWORD_ADMIN | admin                       | 管理员用户密码（访问路径），值为空表示无管理员用户                                   |
+| PASSWORD       |                             | 访客用户密码（访问路径），值为空表示主页                                        |
+| INDEX_REDIRECT |                             | 访客用户密码值不为空时，主页跳转的 URL                                       |
+| URL_EXCLUDE    | //url-shortner-demo.iou.icu | 排除本机域名，请修改为你的域名                                             |
+| THEME_ADMIN    |                             | 管理员用户主页路径，如：`theme/admin`                                   |
+| THEME          |                             | 访客用户主页                                                      |
+| LEN            | 6                           | 随机生成的短链路径长度                                                 |
+| NO_REF         | false                       | 控制 HTTP referrer header                                     |
+| CORS           | false                       | 允许 API 请求提供跨源资源共享                                           |
+| UNIQUE_LINK    | false                       | 为相同的 URL 生成相同的短链                                            |
+| CUSTOM_LINK    | true                        | 允许访客用户自定义短链                                                 |
+| LEN_LIMIT      | 3                           | 允许访客用户自定义短链的最小长度                                            |
+| REGEX_REDIRECT | false                       | 开启正则表达式重定向功能                                                |
 
 ### 正则表达式重定向
 

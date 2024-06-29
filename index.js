@@ -146,29 +146,29 @@ async function handleRequest(request) {
 
       if (user === 0) {
         // Incorrect password.
-        return new Response(`{"status":500,"key": "", "error":"Error: Invalid password."}`, {
+        return new Response(`{"status":500,"key": "", "error":"错误：密码无效。"}`, {
           headers: response_header,
         })
       }
       if (user === 1) {
         if (!await checkURL(req_url)) {
-          return new Response(`{"status":500,"key": "", "error":"Error: URL illegal."}`, {
+          return new Response(`{"status":500,"key": "", "error":"错误：URL 非法。"}`, {
             headers: response_header,
           })
         }
         if (req_url.indexOf(url_exclude) != -1) {
-          return new Response(`{"status":500,"key": "", "error":"Error: URL illegal."}`, {
+          return new Response(`{"status":500,"key": "", "error":"错误：URL 非法。"}`, {
             headers: response_header,
           })
         }
         // req_keyPhrase containing symbol.
         if (req_keyPhrase && !/^[a-zA-Z0-9]+$/.test(req_keyPhrase)) {
-          return new Response(`{"status":500,"key": "", "error":"Error: Custom short URL illegal."}`, {
+          return new Response(`{"status":500,"key": "", "error":"错误：自定义短网址不合法。"}`, {
             headers: response_header,
           })
         }
         if (req_keyPhLen < len_limit && req_keyPhLen > 0) {
-          return new Response(`{"status":500,"key": "", "error":"Error: Custom short URL is too short."}`, {
+          return new Response(`{"status":500,"key": "", "error":"错误：自定义短网址太短。"}`, {
             headers: response_header,
           })
         }
@@ -179,7 +179,7 @@ async function handleRequest(request) {
       if (custom_link == "true" && (req_keyPhrase != "")) {
         let is_exist = await LINKS.get(req_keyPhrase)
         if (is_exist != null && user <= 1) {
-          return new Response(`{"status":500,"key": "", "error":"Error: Custom short URL is not available."}`, {
+          return new Response(`{"status":500,"key": "", "error":"错误：自定义短网址不可用。"}`, {
             headers: response_header,
           })
         } else {
@@ -208,7 +208,7 @@ async function handleRequest(request) {
           headers: response_header,
         })
       } else {
-        return new Response(`{"status":500, "key": "", "error":"Error: Reach the KV write limitation."}`, {
+        return new Response(`{"status":500, "key": "", "error":"错误：达到 KV 写入限制。"}`, {
           headers: response_header,
         })
       }
@@ -218,7 +218,7 @@ async function handleRequest(request) {
       let req_keyPhrase = req["keyPhrase"]
 
       if (user == 0) {
-        return new Response(`{"status":500,"key": "", "error":"Error: Invalid password."}`, {
+        return new Response(`{"status":500,"key": "", "error":"错误：密码无效。"}`, {
           headers: response_header,
         })
       }
@@ -231,7 +231,7 @@ async function handleRequest(request) {
       // Load all KV records.
     } else if (req_cmd == "qryall") {
       if (user !== 10) {
-        return new Response(`{"status":500, "error":"Error: Invalid password."}`, {
+        return new Response(`{"status":500, "error":"错误：密码无效。"}`, {
           headers: response_header,
         })
       }
@@ -257,7 +257,7 @@ async function handleRequest(request) {
           headers: response_header,
         })
       } else {
-        return new Response(`{"status":500, "error":"Error: Download records failed."}`, {
+        return new Response(`{"status":500, "error":"Error: 下载记录失败."}`, {
           headers: response_header,
         })
       }
