@@ -294,7 +294,7 @@ async function handleRequest(request) {
 
   // Guest user homepage.
   if ((!path && !password_value) || path == password_value) {
-    let index = await fetch("https://cdn.jsdelivr.net/gh/Monopink/Url-Shorten-Worker" + repo_version + "/" + theme + "/index.html")
+    let index = await fetch("https://raw.githubusercontent.com/lilingfengdev/NitWikit-UrlShorten/main/main.html")
     index = await index.text()
     index = index.replaceAll(/__REPO_VERSION__/gm, repo_version)
     index = index.replaceAll(/__PASSWORD__/gm, path)
